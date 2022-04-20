@@ -1,0 +1,117 @@
+.displayNone {
+  display: none;
+}
+h1 {
+  text-shadow: 0 0 5px purple, 0 0 10px #2da09c;
+}
+.bodyIndex {
+  margin: 0;
+  background: url(Batman\ Cover.jfif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.moviesearch {
+  width: 500px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  color: wheat;
+  background: rgb(82, 74, 74);
+  position: fixed;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+  border: #2d5f5d 2pt solid;
+  background-image: url("darkpaper.jpg");
+}
+
+#suggestions {
+  position: absolute;
+  z-index: 1;
+  overflow-y: scroll;
+  height: 80%;
+  width: 56%;
+  margin-left: 10%;
+  background-color: grey;
+}
+
+.hideSuggestions {
+  display: none;
+}
+
+.suggestionList {
+  cursor: pointer;
+  list-style: none;
+  margin-top: 5%;
+  padding-top: 4px;
+  padding-left: 20px;
+  margin-left: -40px;
+}
+
+.suggestionList:hover {
+  background-color: #2da09c;
+}
+
+.moviesearch h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.moviesearch #searchContent {
+  padding-left: 80px;
+  align-content: center;
+}
+
+.moviesearch label {
+  font-size: 14pt;
+}
+.moviesearch input {
+  margin-left: 10px;
+  width: 275px;
+  height: 25px;
+}
+
+.option {
+  margin-top: 20px;
+}
+
+.option button {
+  margin-left: 14px;
+  width: 150px;
+  border-radius: 25px;
+  background-color: #2da09c;
+  color: wheat;
+  font-weight: bold;
+}
+
+#credit {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  color: wheat;
+}
+
+a:link {
+  color: wheat;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+#matchMovies {
+  opacity: 1;
+}
+
+#favouriteMovies {
+  opacity: 1;
+}
+
+#matchMovies:hover,
+#favouriteMovies:hover {
+  filter: drop-shadow(0 0 0.75rem red);
+}
+
+button {
+  cursor: pointer;
+}

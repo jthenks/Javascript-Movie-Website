@@ -1,0 +1,502 @@
+.title {
+  text-align: center;
+}
+
+body {
+  background-color: #022140;
+  max-height: 800px;
+}
+#browserDisplay {
+  text-shadow: 0 0 5px #2da09c;
+}
+#container {
+  display: inline-flex;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  width: 100%;
+  height: 89%;
+  max-height: 800px;
+}
+#aside {
+  flex: 20%;
+  text-align: center;
+  background-color: #1e2761;
+  background-image: url("darkpaper.jpg");
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  border: #2d5f5d 2pt solid;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+#aside {
+  transition: visibility 1s, opacity 0.5s linear;
+}
+
+#message {
+  text-align: center;
+  margin-top: 15%;
+  color: black;
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+.visibility {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.clickTitle {
+  font-weight: 600;
+}
+
+.movieListing {
+  display: grid;
+  grid-template-columns: 20% 40% 15% 15% 10%;
+  margin-top: 4px;
+}
+
+#movieListingMovies {
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
+
+#titleText,
+#yearText,
+#rateText {
+  background-color: #494b68;
+  font-size: large;
+}
+
+.formOptions {
+  text-align: left;
+}
+
+#sort {
+  margin-left: 58%;
+  font-size: medium;
+  display: inline;
+  color: #000114;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+#after {
+  margin-left: 12%;
+}
+#before {
+  margin-left: 8%;
+}
+
+#filterMovies,
+#clearFilters,
+#titleAsc,
+#titleDsc,
+#yearAsc,
+#yearDsc,
+#rateAsc,
+#rateDsc,
+#toggle {
+  opacity: 1;
+}
+
+#main {
+  flex: 80%;
+  margin-left: 0px;
+  overflow: scroll;
+  /* background-image: linear-gradient(to right, #0bb6ffe8, rgb(130, 203, 228)); */
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border: #2d5f5d 2pt solid;
+  background: rgb(243, 205, 172);
+}
+
+#defaultHeader {
+  background: rgb(73, 75, 104);
+  background: radial-gradient(
+    circle,
+    rgba(73, 75, 104, 1) 25%,
+    rgba(2, 33, 64, 1) 92%
+  );
+}
+
+#mainHeading,
+#mainTitle {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+#mainHeading {
+  color: white;
+  padding-top: 0px;
+  text-shadow: 0 0 5px #2da09c;
+  background: rgb(73, 75, 104);
+}
+
+th {
+  color: #02075d;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.outputs {
+  margin-left: 5pt;
+}
+
+.buttons {
+  margin-top: 26pt;
+  margin-left: 30pt;
+  margin-right: 23pt;
+  border-radius: 30%;
+  background-color: #2da09c;
+  color: white;
+  font-size: large;
+  padding: 10px;
+  border: solid white 3px;
+  opacity: 90%;
+}
+.buttons:hover,
+.sortButtons:hover {
+  border-color: red;
+}
+.clickTitle:hover {
+  text-shadow: 0px 0px 8px red;
+}
+.clickPoster:hover,
+.favouriteButton:hover {
+  filter: drop-shadow(0 0 0.75rem red);
+}
+
+input[type="radio"] {
+  margin: 10px;
+}
+
+#between {
+  margin-left: 39%;
+}
+
+#betweenFrom {
+  margin-right: 3%;
+}
+
+.textbox {
+  margin: 0 10pt;
+}
+
+#mainTitle {
+  color: wheat;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#year,
+#rate,
+#titleSection {
+  padding-top: 0px;
+}
+
+#belowInput,
+#aboveInput {
+  margin-left: 15%;
+}
+
+#betweenFromInput {
+  margin-left: 9%;
+}
+
+#betweenTillInput {
+  margin-left: 42%;
+}
+
+#table {
+  width: 100%;
+}
+.sortButtons {
+  border-radius: 30%;
+  background-color: #2da09c;
+  color: white;
+  border: solid white 3px;
+  opacity: 90%;
+}
+
+.view {
+  border-radius: 30%;
+  background-color: lavender;
+  color: #02075d;
+  border: solid rgb(48, 160, 235) 2px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+#toggle {
+  background-color: #2da09c;
+  color: white;
+}
+
+.headings {
+  text-align: left;
+  font-weight: bold;
+  font-size: large;
+}
+
+.posters {
+  padding-left: 40pt;
+}
+
+#movieYear {
+  padding-right: 40pt;
+}
+
+#movieRating {
+  padding-right: 60pt;
+}
+
+.view {
+  margin-right: 40pt;
+}
+
+.clickPoster {
+  margin-left: 26%;
+  margin-top: 4%;
+}
+.favouriteButton {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 1.5em;
+}
+
+.clickTitle,
+.yearDiv,
+.rateDiv {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#afterYear,
+#beforeYear,
+#betweenFrom,
+#belowRate,
+#aboveRate,
+#betweenFromRate,
+#betweenTillRate {
+  margin-left: 9.8px;
+}
+
+#betweenYear {
+  padding-left: 1px;
+}
+
+#afterYearLabel {
+  padding-left: 29px;
+}
+#beforeYearLabel {
+  padding-left: 18px;
+}
+#betweenTill {
+  display: block;
+  margin-left: 194px;
+  margin-top: 7px;
+}
+
+#aboveRateLabel {
+  padding-left: 29px;
+}
+
+#belowRateLabel {
+  padding-left: 29px;
+}
+
+#betweenTillRate {
+  display: inline-block;
+  margin-left: 118px;
+  margin-top: 7px;
+}
+
+#betweenRate {
+  padding-left: 9px;
+}
+
+.movieListingHeaders {
+  background-color: #494b68;
+  color: white;
+  width: 100%;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  display: grid;
+  grid-template-columns: 20% 40% 15% 15% 10%;
+}
+
+.headings {
+  display: inline;
+}
+#movieTitleDefault {
+  grid-column: 2;
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1440px) {
+  #aside {
+    flex: 25%;
+    border-right: none;
+  }
+  #main {
+    flex: 75%;
+    border-left: none;
+  }
+
+  .clickPoster {
+    margin-left: 26%;
+    margin-top: 4%;
+  }
+  .favouriteButton {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1.3em;
+  }
+
+  .clickTitle,
+  .yearDiv,
+  .rateDiv {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  #container {
+    height: 718.18px;
+  }
+
+  #year,
+  #rate,
+  #titleSection {
+    padding-top: 7px;
+  }
+
+  .buttons {
+    margin-top: 38pt;
+  }
+
+  #betweenTillInput {
+    margin-left: 37%;
+  }
+  #between {
+    margin-left: 33%;
+  }
+
+  #after {
+    margin-left: 11%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 500px) {
+  #container {
+    display: block;
+    position: static;
+  }
+  #movieTitleDefault {
+    grid-column: 1;
+  }
+  .movieListing {
+    display: grid;
+    grid-template-columns: 23% auto 15% 10% 10%;
+    overflow-y: scroll;
+    height: 500px;
+  }
+
+  #movieFavouriteDefault {
+    display: none;
+  }
+
+  .clickPoster {
+    margin-left: 2px;
+  }
+  .clickTitle {
+    margin: auto;
+    text-align: center;
+  }
+
+  .yearDiv,
+  .rateDiv {
+    margin: auto;
+  }
+
+  #betweenTill {
+    margin-left: 220px;
+  }
+  #credit {
+    font-size: 0.8em;
+  }
+  #year,
+  #rate,
+  #titleSection {
+    padding-top: 20px;
+  }
+
+  .buttons {
+    margin-bottom: 30pt;
+  }
+
+  #toggle {
+    width: 100%;
+  }
+
+  .posters {
+    padding-left: 10pt;
+    margin-right: 10pt;
+  }
+
+  #movieYear {
+    padding-right: 15pt;
+  }
+
+  #movieRating {
+    padding-right: 10pt;
+  }
+
+  td {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+
+  th {
+    padding-top: 10%;
+    background-color: transparent;
+  }
+
+  #movieYear,
+  #movieRating {
+    padding-left: 5%;
+  }
+
+  #movieRating {
+    padding-left: 10%;
+  }
+
+  .yearCells,
+  .rateCells {
+    padding-left: 5%;
+  }
+
+  .rateCells {
+    padding-left: 10%;
+  }
+
+  .viewCells {
+    padding-left: 10%;
+  }
+
+  #main {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+  #aside {
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: none;
+  }
+
+  .movieListingHeaders {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    text-align-last: center;
+  }
+}

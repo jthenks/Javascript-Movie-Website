@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="data/favourite-movies.json"></script>
+  <script src="index.js"></script>
+  <script src="details.js"></script>
+  <script src="default.js"></script>
+  <link rel="stylesheet" type="text/css" href="defaultcss.css" >
+  <link rel="stylesheet" type="text/css" href="style.css" >
+  <link rel="stylesheet" type="text/css" href="detailscss.css" >
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+
+<!-- <body> class = bodyIndex for index, "none" for default, bodyDetails for details -->
+<body class="bodyIndex">
+  <div id="index" >
+    <div class="moviesearch">
+      <h1>Movie Browser</h1>
+      <div id="searchContent">
+        <label>Title</label>
+          <input type="text" id="searchBox" placeholder="Enter Movie Title">
+        <div id="suggestions" class="hideSuggestions">
+          <ul id="suggestionBox"></ul>
+        </div>
+        <div class="option">
+          <button id="matchMovies">Show Matching Movies</button>
+          <button id="favouriteMovies">Show Favourite Movies</button>
+        </div>
+      </div>
+    </div>
+    <div id="credit">
+      Photo by <a href="https://unsplash.com/@actionvance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">ActionVance</a> on <a href="https://unsplash.com/s/photos/batman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    </div>
+  </div>
+
+  <div id="default" class="displayNone">
+    <header id="defaultHeader">
+      <h1 class="title" id="mainTitle">COMP 3512 Assignment 1</h1>
+    </header>
+    <div id="container">
+      <div id="aside">
+        <div id="filterForm">
+              <section id="titleSection">
+                <h2 id="browserDisplay">Movie Filters</h2>
+                <h4 id="titleText">Movie Title</h4>
+                <label>
+                  <input type="search" name="searchbar" id="searchBar" placeholder="Enter Movie Title">
+                </label>
+              </section>  
+              <section id="year">
+                <h4 id="yearText">Year</h4>
+                  <label id="beforeYearLabel">
+                    <input type="radio" name="year" value="beforeYear">Before 
+                  </label>
+                  <label >
+                    <input type="number" class="textbox" id="beforeYear" min="0" max="9999"> 
+                  </label>
+                  <br>
+                  <label id="afterYearLabel"> 
+                    <input type="radio" name="year" value="afterYear">After 
+                  </label>  
+                  <label> 
+                    <input type="number" class="textbox" id="afterYear" min="0" max="9999">
+                  </label>  
+                  <br>
+                  <label id="betweenYear">
+                    <input type="radio" name="year" value="betweenYear">Between
+                  </label> 
+                  <label> 
+                     <input type="number" class="textbox" id="betweenFrom" min="0" max="9999">  
+                  </label>  
+                  <label> 
+                     <input type="number" class="textbox" id="betweenTill" min="0" max="9999"> 
+                  </label>
+              </section>
+              <section id="rate">
+                <h4 id="rateText">Rating</h4>
+                  <label id="belowRateLabel">
+                    <input type="radio" name="rating" value="belowRate">Below
+                  </label>  
+                  <label>
+                    <input type="range" min="0" max="10" class="slider" id="belowRate">
+                  </label>  
+                  <label>
+                    <output id="belowOutput" class="outputs"></output>
+                  </label>  
+                  <br>
+                  <label id="aboveRateLabel">
+                    <input type="radio" name="rating" value="aboveRate">Above
+                  </label>  
+                  <label>
+                    <input type="range" min="0" max="10" class="slider" id="aboveRate">
+                  </label>  
+                  <label>
+                    <output id="aboveOutput" class="outputs"></output>
+                  </label>  
+                  <br>
+                  <label id="betweenRate">
+                    <input type="radio" name="rating" value="betweenRate">Between
+                  </label>  
+                  <label>
+                    <input type="range" min="0" max="10" class="slider" id="betweenFromRate">
+                  </label>  
+                  <label>
+                    <output id="betweenFromOutput" class="outputs"></output>
+                  </label> 
+                  <label> 
+                    <input type="range" min="0" max="10" class="slider" id="betweenTillRate">
+                  </label>  
+                  <label>
+                    <output id="betweenTillOutput" class="outputs"></output>
+                  </label>
+              </section>
+               
+              <button type="submit" id="filterMovies" class="buttons">Filter</button>
+              <button type="reset" id="clearFilters" class="buttons">Clear</button>
+            </div>
+      </div>
+      <button type="button" id="toggle"> &#9776; </button>  
+      <div id="main">
+        <h2 class="title" id="mainHeading">List / Matches</h2>
+        <div class="movieListingHeaders">
+            <div class="headings" id="movieTitleDefault">Title 
+              <button type="button" class="sortButtons" id="titleAsc">🠕</button>
+              <button type="button" class="sortButtons" id="titleDsc">🠗</button>
+            </div>
+            <div class="headings" id="movieYearDefault">Year
+              <button type="button" class="sortButtons" id="yearAsc">🠕</button>
+              <button type="button" class="sortButtons" id="yearDsc">🠗</button>
+            </div>
+            <div class="headings" id="movieRatingDefault">Rating
+              <button type="button" class="sortButtons" id="rateAsc">🠕</button>
+              <button type="button" class="sortButtons" id="rateDsc">🠗</button>
+            </div>
+            <div class="headings" id="movieFavouriteDefault">Favourite</div>
+            <!-- <div id="movieListingMovies" class="movieListing"></div>  -->
+        </div>     
+        <div id="movieListingMovies" class="movieListing"></div>
+        <div id="message"></div>
+    </div>
+    </div>
+  </div>
+
+  <div id="details" class="displayNone">
+    <header id="detailsHeader">
+      <h1 id="mainTitleDetails">COMP 3512 Assignment 1</h1>
+      <!-- <div id="closeDiv"> -->
+      <button type="button" id="closeButton">X</button>
+    </header>
+    <div id="detailsMain">
+      <div id="movieDetailSection">  
+        <div id="movieTitleDiv">
+          <h2>temp</h2>
+          <img src="text-to-speech.jpg" title="image taken from https://favpng.com/png_view/speech-symbol-text-speech-synthesis-png/uQrm8QpZ" id="speakButton">
+        </div>
+        <div id="speakDiv"></div>
+        <div id="movieDetailDiv">
+          <div class="detailText">
+            Release Date: <span id="releaseDate" class="detailValue"></span>
+          </div>
+          <div class="detailText">
+            Revenue: <span id="revenue" class="detailValue"></span>
+          </div>
+          <div class="detailText">
+            Runtime: <span id="runtime" class="detailValue"></span>
+          </div>
+          <div class="detailText">
+            Tagline: <span id="tagline" class="detailValue"></span>
+          </div>
+          <div class="detailText">
+            IMDB Link: <span class="detailValue"><a id="imdb" target="_blank" href="">Click Here to the IMDB Page</a></span>
+          </div>
+          <div class="detailText">
+            TMDB Link: <span class="detailValue"><a id="tmdb" target="_blank" href="">Click Here to the TMDB Page</a></span>
+          </div>
+          <div class="detailText">
+            Overview: <span id="overview" class="detailValue"></span>
+          </div>
+          <div class="detailText">
+            Ratings: 
+            <span id="popularity" class="detailValue"></span> <span id="arrow"><img src="arrow.png" width="15" height="15" alt="arrow"></span>
+            <span id="average" class="detailValue"></span> <span id="vote"><img src="vote.png" width="15" height="15" alt="vote"></span>
+            <span id="count" class="detailValue"></span> <span id="star"><img src="star.png" width="15" height="15" alt="star"></span>
+          </div>
+        </div>
+        <div id="companyDiv">
+          <div>
+            <h3>Companies</h3>
+          </div>
+          <div id="companyNames">
+          </div>
+        </div>
+        <div id="countryDiv">
+          <div>
+            <h3>Countries</h3>
+          </div>
+          <div id="countryNames">
+          </div>
+        </div>
+        <div id="keywordDiv">
+          <div>
+            <h3>Keywords</h3>
+          </div>
+          <div id="keywords">
+          </div>
+        </div>
+        <div id="genreDiv">
+          <div>
+            <h3>Genres</h3>
+          </div>
+          <div id="genres">
+          </div>
+        </div>
+    </div>
+    <div id="moviePosterSection">
+      <div>
+        <picture>
+          <source media="(max-width: 500px)" id="sourceMediaPoster" srcset="noImages.jpg">
+         <img id="poster" alt="" src="noImages.jpg">
+        </picture>
+      </div>  
+      <!-- the code for this modal was taken from https://www.w3schools.com/howto/howto_css_modal_images.asp -->
+      <div id="posterModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <picture>
+            <source media="(max-width: 500px)" id="sourceMediaPopupPoster" srcset="noImages.jpg">
+           <img id="popupPoster" alt="" src="noImages.jpg">
+          </picture>
+        </div>
+      </div>
+      <div>
+      </div>
+    </div>
+    <div id="movieCastCrewSection">
+      <div id="tab">
+        <button type="button" id="castButton" class="activeTab">Cast</button>
+        <button type="button" id="crewButton">Crew</button>
+      </div>
+        <div id="castContent">
+          <div id="characterTitle">
+            Characters
+          </div>
+          <div id="actorTitle">
+            Actors
+          </div>
+          <div id="castDetails">
+          </div>    
+        </div>
+        <div id="crewContent">
+          <div id="departmentTitle">
+            Department
+          </div>
+          <div id="jobTitle">
+            Job Title
+          </div>
+          <div id="crewNameTitle">
+            Name
+          </div>
+          <div id="crewDetails">
+         </div>  
+        </div>
+    </div>
+  </div>
+</div>
+<script src="movieHelpers.js"></script>
+</body>
+</html>

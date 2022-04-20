@@ -1,0 +1,462 @@
+.bodyDetails {
+  background-color: #022140;
+}
+#detailsHeader h1 {
+  text-align: center;
+}
+
+#detailsHeader {
+  background: rgb(73, 75, 104);
+  background: radial-gradient(
+    circle,
+    rgba(73, 75, 104, 1) 25%,
+    rgba(2, 33, 64, 1) 92%
+  );
+}
+#mainTitleDetails {
+  color: wheat;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3 {
+  margin-top: -4px;
+}
+
+#detailsMain {
+  display: grid;
+  grid-template-columns: 33% 28% 39%;
+  grid-gap: 2pt;
+  height: 100%;
+  font-family: Geneva, Tahoma, sans-serif;
+}
+
+#movieDetailSection {
+  /* Photo found at https://www.pinterest.ca/pin/404198135307204060/
+  */
+  background-image: url("darkpaper.jpg");
+  background-size: cover;
+  border: #2d5f5d 2pt solid;
+  border-radius: 25px;
+}
+
+#moviePosterSection {
+  /* Photo by <a href="https://unsplash.com/@davidjorre?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">David Jorre</a> on <a href="https://unsplash.com/s/photos/rock-texture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  */
+  background-image: url("blackBackground.jpg");
+  border: #2d5f5d 2pt solid;
+  border-radius: 25px;
+}
+
+#divmovieTitleDiv h2 {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#closeDiv {
+  text-align: center;
+}
+
+button {
+  background-color: white;
+  opacity: 0.7;
+}
+
+/* h2 {
+  padding-top: 14px;
+} */
+
+#speakButton {
+  border-radius: 25px;
+  height: 35px;
+  width: 35px;
+  font-size: medium;
+  font-weight: bold;
+  border: none;
+  align-self: center;
+  cursor: pointer;
+}
+
+#speakButton:hover,
+#poster:hover {
+  filter: drop-shadow(0 0 0.75rem red);
+}
+
+#tmdb,
+#imdb {
+  color: black;
+  font-weight: bold;
+}
+
+#tmdb:hover,
+#imdb:hover {
+  color: #2d5f5d;
+}
+
+.sortSelected {
+  border-color: red;
+}
+
+#poster {
+  margin-left: 10%;
+  margin-top: 10%;
+  cursor: pointer;
+}
+
+#youtubeVideo {
+  margin-top: 23%;
+}
+
+#movieTitleDiv {
+  margin-top: 5%;
+  text-align: center;
+  background-color: #494b68;
+  color: white;
+  display: grid;
+  grid-template-columns: 88% 12%;
+  padding-left: 40px;
+}
+
+#movieDetailDiv,
+#companyDiv,
+#countryDiv,
+#keywordDiv,
+#genreDiv {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border: solid grey 2px;
+  border-radius: 25px;
+  background-color: rgb(243, 205, 172);
+  padding: 8px 8px;
+}
+
+/* the code for this modal was taken from https://www.w3schools.com/howto/howto_css_modal_images.asp  */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  /* background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; */
+
+  margin: auto;
+  display: block;
+}
+
+.close {
+  /* color: #aaaaaa;
+  float: right;
+  font-size: 30px;
+  font-weight: bolder; */
+  top: -5px;
+  position: absolute;
+  right: 335px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.detailText {
+  font-weight: bold;
+}
+
+.detailValue {
+  font-weight: normal;
+}
+
+#movieDetailDiv div,
+#companyDiv div,
+#countryDiv div,
+#keywordDiv div,
+#genreDiv div {
+  margin: 2%;
+}
+
+#genreDiv {
+  margin-bottom: 5%;
+}
+
+#tab {
+  overflow: hidden;
+  background-color: #494b68;
+  border-top-left-radius: 21px;
+  border-top-right-radius: 21px;
+}
+
+#castButton {
+  /* float: left; */
+  padding: 15px 106px;
+  font-size: large;
+  font-weight: bold;
+  color: black;
+  border-color: #2da09c;
+}
+
+#crewButton {
+  padding: 15px 106px;
+  font-size: large;
+  font-weight: bold;
+  border-color: #2da09c;
+  color: black;
+}
+
+.activeTab {
+  background-color: #2da09c;
+}
+
+#tab button:hover {
+  background-color: white;
+  color: #2da09c;
+}
+#speakButton:hover,
+#closeButton:hover {
+  background-color: #ddd;
+}
+
+#closeButton {
+  background-color: white;
+  color: #494b68;
+  float: right;
+  margin-top: -80px;
+  margin-right: -8px;
+  padding-top: 8px;
+  padding-bottom: 6px;
+  padding-left: 14px;
+  padding-right: 14px;
+  font-weight: bold;
+  font-size: 25px;
+  border-width: 3px;
+  border-color: #2d5f5d;
+  opacity: 1;
+}
+
+.tabLink {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #020000;
+  border-top: none;
+}
+
+#movieCastCrewSection {
+  height: auto;
+  color: black;
+  /* Photo found at https://www.pinterest.ca/pin/404198135307204060/
+  */
+  background-image: url("darkpaper.jpg");
+  background-size: cover;
+  border: #2d5f5d 2pt solid;
+  background-position: 100% 0%;
+  border-radius: 25px;
+}
+
+#castContent {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  text-align: center;
+  margin-bottom: 10%;
+  height: 102vh;
+  overflow-y: scroll;
+}
+
+#castDetails {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+#departmentTitle,
+#jobTitle,
+#crewNameTitle,
+#actorTitle,
+#characterTitle {
+  color: white;
+
+  font-size: x-large;
+  font-weight: bolder;
+  background-color: #595b7c;
+}
+
+#departmentTitle {
+  text-shadow: 0px 0px 5px #2d5f5d;
+}
+
+#jobTitle {
+  text-shadow: 0px 0px 5px #663347;
+}
+
+#crewNameTitle {
+  text-shadow: 0px 0px 5px #2d5f5d;
+}
+
+#actorTitle {
+  text-shadow: 1px 1px 5px #663347;
+}
+
+#characterTitle {
+  text-shadow: 1px 1px 5px #2d5f5d;
+}
+
+#popularity {
+  margin-left: 5%;
+}
+
+#average {
+  margin-left: 5%;
+}
+
+#count {
+  margin-left: 5%;
+}
+
+.castCharacter,
+.castName {
+  margin-top: 20pt;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-right: 1%;
+  margin-left: 1%;
+  background-color: rgb(243, 205, 172);
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: large;
+  border-width: 3px;
+}
+
+.castCharacter {
+  border: solid #2d5f5d 3px;
+}
+
+.castName {
+  border: solid #595b7c 3px;
+}
+
+#crewContent {
+  display: none;
+  grid-template-columns: 35% 30% 35%;
+  text-align: center;
+  height: 102vh;
+  overflow-y: scroll;
+}
+
+#crewDetails {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: grid;
+  grid-template-columns: 30% 35% 35%;
+}
+
+.crewName,
+.crewJob,
+.crewDepartment {
+  margin-right: 1%;
+  margin-left: 1%;
+  margin-top: 20pt;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: rgb(243, 205, 172);
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.crewName {
+  border: solid #2d5f5d 3px;
+}
+
+.crewJob {
+  border: solid #595b7c 3px;
+}
+
+.crewDepartment {
+  border: solid #2d5f5d 3px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 500px) {
+  #detailsMain {
+    display: block;
+  }
+
+  #closeButton {
+    margin-top: -120px;
+  }
+
+  #poster {
+    margin-left: 25%;
+  }
+
+  #youtubeVideo {
+    width: 400px;
+    border-bottom-left-radius: 21px;
+    border-bottom-right-radius: 21px;
+  }
+
+  #castButton {
+    padding: 15px 77px;
+  }
+
+  #crewButton {
+    padding: 15px 77px;
+  }
+
+  #departmentTitle,
+  #jobTitle,
+  #crewNameTitle {
+    font-size: large;
+  }
+
+  .crewName,
+  .crewJob,
+  .crewDepartment {
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-top: 40pt;
+    background-color: rgb(243, 205, 172);
+    font-weight: bold;
+    font-size: medium;
+  }
+
+  .modal-content {
+    text-align: center;
+  }
+
+  .close {
+    top: -5px;
+    right: 66px;
+  }
+
+  #poster {
+    padding-bottom: 40px;
+    padding-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1440px) {
+  #detailsMain {
+    grid-template-columns: 33% 30% 37%;
+  }
+
+  .modal-content {
+    width: 780px;
+  }
+}
